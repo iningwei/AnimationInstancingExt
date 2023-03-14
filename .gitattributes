@@ -1,0 +1,2 @@
+Assets/AniInstancing/Example/TestResource/Characters/DudeLow/Dude_low.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/AniInstancing/Example/TestResource/Characters/U_Character/U_Character_Body-DIF.psd filter=lfs diff=lfs merge=lfs -text
