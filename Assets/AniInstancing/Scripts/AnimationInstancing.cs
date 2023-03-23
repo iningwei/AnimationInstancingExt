@@ -283,7 +283,7 @@ namespace AnimationInstancing
             }
 
 
-            AnimationInstancingMgr.Instance.AddMeshVertex(prototype.name,
+            AnimationInstancingMgr.Instance.AddMeshVertex(/*prototype.name*/animDataFileName,
                 lodInfo,
                 allTransforms,
                 bindPose,
@@ -577,7 +577,7 @@ namespace AnimationInstancing
             Debug.Assert(index >= 0);
             if (index < 0)
             {
-                Debug.LogError("Can't find the bone.");
+                Debug.LogError("Can't find the bone:" + boneName);
                 return;
             }
             if (attachment.lodInfo[0].meshRenderer.Length == 0 && attachment.lodInfo[0].skinnedMeshRenderer.Length == 0)

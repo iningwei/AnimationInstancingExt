@@ -143,7 +143,7 @@ namespace AnimationInstancing
             Debug.Assert(prefab != null);
             string path;
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
-            path = Application.dataPath + "/AnimationTexture/";
+            path = Application.dataPath + "/StreamingAssets/AnimationTexture/";
 #elif UNITY_STANDALONE_OSX
 		    path = Application.dataPath + "/Resources/Data/StreamingAssets/AnimationTexture/";
 #endif

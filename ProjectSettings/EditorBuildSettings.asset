@@ -5,9 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/TestProject2/Crowd Simulation.unity
-    guid: 44c666d67c482e945b6cbb9f0c343670
   - enabled: 0
-    path: 
-    guid: 506aea5dec27fd34cb647509d63211c5
+    path: Assets/AniInstancing/Example/TestProject2/Crowd Simulation.unity
+    guid: 44c666d67c482e945b6cbb9f0c343670
+  - enabled: 1
+    path: Assets/_Test/Test.unity
+    guid: 2973e0014b13b844a8c91332ce17b052
+  m_configObjects: {}
