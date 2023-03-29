@@ -168,8 +168,9 @@ GameObject:
   - component: {fileID: 398703601324391019}
   - component: {fileID: 1293148728478339801}
   - component: {fileID: 7124992479660731398}
+  - component: {fileID: 2882431914313319437}
   m_Layer: 0
-  m_Name: Basic_Infantry_0
+  m_Name: Basic_Infantry_0_gpu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,7 +183,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063881388776464593}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -191,6 +192,7 @@ Transform:
   - {fileID: 6070673978960884075}
   - {fileID: 3512271593465759133}
   - {fileID: 3834180961016456577}
+  - {fileID: 9093708685699081415}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -232,8 +234,22 @@ MonoBehaviour:
   receiveShadow: 0
   applyRootMotion: 0
   bonePerVertex: 4
-  animDataFileName: Basic_Infantry_0
+  animDataFileName: Basic_Infantry_0_gpu
   aniInfo: []
+--- !u!114 &2882431914313319437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063881388776464593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f9083f381b054d9e8cc1b0d369c0833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachment: {fileID: 5759509415615450978}
+  attachNodeName: w0
 --- !u!1 &1439498410931412436
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +503,8 @@ Transform:
   m_LocalPosition: {x: -0.21099567, y: 0.2427488, z: -0.08002149}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4946698281183253976}
   m_Father: {fileID: 8936561130195506714}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -778,6 +795,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8252610569699104457}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5802555612093150450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9093708685699081415}
+  m_Layer: 0
+  m_Name: hudAnchorTran
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9093708685699081415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5802555612093150450}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 398703601324391019}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6334449060067781129
 GameObject:
@@ -1145,3 +1193,109 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0099205375, y: 0.04888004, z: -0.038811862}
     m_Extent: {x: 0.907288, y: 0.39758253, z: 0.4269538}
   m_DirtyAABB: 0
+--- !u!1001 &4389762481975452901
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6215420088691012552}
+    m_Modifications:
+    - target: {fileID: 7495835328508496466, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1cb49240d59f4c24a840d6b7a725f586, type: 2}
+    - target: {fileID: 8288438558469729159, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_Name
+      value: Morita_Carbine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668763360601141565, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668763360601141565, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3747661
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668763360601141565, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.92129916
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668763360601141565, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5593461
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668763360601141565, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.898699
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668763360601141565, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.23486766
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668763360601141565, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.3311889
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668763360601141565, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.16580512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668763360601141565, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668763360601141565, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668763360601141565, guid: b024e2c4311104e4d846416d4df69013,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b024e2c4311104e4d846416d4df69013, type: 3}
+--- !u!4 &4946698281183253976 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8668763360601141565, guid: b024e2c4311104e4d846416d4df69013,
+    type: 3}
+  m_PrefabInstance: {fileID: 4389762481975452901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5759509415615450978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8288438558469729159, guid: b024e2c4311104e4d846416d4df69013,
+    type: 3}
+  m_PrefabInstance: {fileID: 4389762481975452901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1507550519564886256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759509415615450978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f47bf4169ec5dd4cbf530cf6929eeab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prototype: {fileID: 5759509415615450978}
+  playSpeed: 1
+  shadowCastingMode: 1
+  receiveShadow: 0
+  applyRootMotion: 0
+  bonePerVertex: 4
+  animDataFileName: Morita_Carbine
+  aniInfo: []

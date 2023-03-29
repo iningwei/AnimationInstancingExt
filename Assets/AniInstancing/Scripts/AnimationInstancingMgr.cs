@@ -15,7 +15,7 @@ using System.IO;
 namespace AnimationInstancing
 {
     [AddComponentMenu("AnimationInstancingMgr")]
-    public class AnimationInstancingMgr : Singleton<AnimationInstancingMgr>
+    public class AnimationInstancingMgr : AnimInsSingleton<AnimationInstancingMgr>
     {
         // array[index base on texture][package index][instance index]
         public class InstanceData
@@ -98,7 +98,7 @@ namespace AnimationInstancing
 
         public static AnimationInstancingMgr GetInstance()
         {
-            return Singleton<AnimationInstancingMgr>.Instance;
+            return AnimInsSingleton<AnimationInstancingMgr>.Instance;
         }
 
         private void OnEnable()

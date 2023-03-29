@@ -441,7 +441,7 @@ namespace AnimationInstancing
 
         public void UpdateAnimation()
         {
-            if (aniInfo == null || IsPause())
+            if (aniInfo == null ||aniIndex==-1|| aniInfo[aniIndex]==null || IsPause())
                 return;
 
             if (isInTransition)

@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace AnimationInstancing
 {
-    public class AnimationManager : Singleton<AnimationManager>
+    public class AnimationManager : AnimInsSingleton<AnimationManager>
     {
         // A request to create animation info, because we use async method
         struct CreateAnimationRequest
@@ -35,7 +35,7 @@ namespace AnimationInstancing
 
         public static AnimationManager GetInstance()
         {
-            return Singleton<AnimationManager>.Instance;
+            return AnimInsSingleton<AnimationManager>.Instance;
         }
 
         private void Awake()

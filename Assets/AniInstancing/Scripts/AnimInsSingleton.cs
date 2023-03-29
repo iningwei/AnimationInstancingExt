@@ -1,4 +1,4 @@
-﻿/*
+/*
 THIS FILE IS PART OF Animation Instancing PROJECT
 AnimationInstancing.cs - The core part of the Animation Instancing library
 
@@ -8,7 +8,7 @@ AnimationInstancing.cs - The core part of the Animation Instancing library
 using UnityEngine;
 using System.Collections;
 
-public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+public class AnimInsSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _instance;
 
@@ -33,7 +33,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                     {
                         GameObject singleton = new GameObject();
                         _instance = singleton.AddComponent<T>();
-                        singleton.name = "(singleton) " + typeof(T).ToString();
+                        singleton.name = "(AnimInsSingleton) " + typeof(T).ToString();
 
                         DontDestroyOnLoad(singleton);
                     }

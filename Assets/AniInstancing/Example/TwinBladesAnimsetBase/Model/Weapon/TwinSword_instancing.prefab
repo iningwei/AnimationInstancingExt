@@ -102,5 +102,5 @@ MonoBehaviour:
   receiveShadow: 0
   applyRootMotion: 0
   bonePerVertex: 4
-  animDataFileName: 
+  animDataFileName: TwinSword_instancing
   aniInfo: []
