@@ -86,7 +86,8 @@ namespace AnimationInstancing
         [NonSerialized]
         private List<AnimationInstancing> listAttachment;
 
-        void Start()
+        //////void Start()
+        void Awake()
         {
             if (!AnimationInstancingMgr.Instance.UseInstancing)
             {
@@ -441,7 +442,7 @@ namespace AnimationInstancing
 
         public void UpdateAnimation()
         {
-            if (aniInfo == null ||aniIndex==-1|| aniInfo[aniIndex]==null || IsPause())
+            if (aniInfo == null || aniIndex == -1 || aniInfo[aniIndex] == null || IsPause())
                 return;
 
             if (isInTransition)
