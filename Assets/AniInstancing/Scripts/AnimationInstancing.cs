@@ -1,4 +1,4 @@
-﻿/*
+/*
 THIS FILE IS PART OF Animation Instancing PROJECT
 AnimationInstancing.cs - The core part of the Animation Instancing library
 
@@ -86,7 +86,6 @@ namespace AnimationInstancing
         [NonSerialized]
         private List<AnimationInstancing> listAttachment;
 
-        //////void Start()
         void Awake()
         {
             if (!AnimationInstancingMgr.Instance.UseInstancing)
@@ -250,6 +249,7 @@ namespace AnimationInstancing
                 aniInfo = info.listAniInfo;
                 Prepare(aniInfo, info.extraBoneInfo);
             }
+
             searchInfo = new AnimationInfo();
             comparer = new ComparerHash();
             return true;
@@ -302,6 +302,7 @@ namespace AnimationInstancing
 
             Destroy(GetComponent<Animator>());
             //Destroy(GetComponentInChildren<SkinnedMeshRenderer>());
+
 
             PlayAnimation(0);
         }
