@@ -60,6 +60,8 @@ namespace AnimationInstancing
         float transitionTimer = 0.0f;
         [NonSerialized]
         public float transitionProgress = 0.0f;
+        public string initAnimationName = "";
+        public string curAnimationName = "";
         private int eventIndex = -1;
 
         public List<AnimationInfo> aniInfo;
@@ -179,6 +181,18 @@ namespace AnimationInstancing
             CalcBoundingSphere();
             AnimationInstancingMgr.Instance.AddBoundingSphere(this);
             AnimationInstancingMgr.Instance.AddInstance(gameObject);
+
+
+
+            //必须初始播放一个动画，否则模型不可见
+            if (initAnimationName != "")
+            {
+                PlayAnimation(initAnimationName);
+            }
+            else
+            {
+                PlayAnimation(0);
+            }
         }
 
 
@@ -301,10 +315,7 @@ namespace AnimationInstancing
             }
 
             Destroy(GetComponent<Animator>());
-            //Destroy(GetComponentInChildren<SkinnedMeshRenderer>());
-
-
-            PlayAnimation(0);
+            //Destroy(GetComponentInChildren<SkinnedMeshRenderer>()); 
         }
 
         private void CalcBoundingSphere()
@@ -331,8 +342,10 @@ namespace AnimationInstancing
 
         public void PlayAnimation(string name)
         {
+            this.curAnimationName = name;
             int hash = name.GetHashCode();
             int index = FindAnimationInfo(hash);
+            Debug.Log("begin playAnimation:" + name + ",index:" + index);
             PlayAnimation(index);
         }
 
