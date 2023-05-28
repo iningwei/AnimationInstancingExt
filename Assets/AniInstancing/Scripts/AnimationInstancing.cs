@@ -345,7 +345,7 @@ namespace AnimationInstancing
             this.curAnimationName = name;
             int hash = name.GetHashCode();
             int index = FindAnimationInfo(hash);
-            Debug.Log("begin playAnimation:" + name + ",index:" + index);
+            //Debug.Log("begin playAnimation:" + name + ",index:" + index);
             PlayAnimation(index);
         }
 
@@ -359,6 +359,7 @@ namespace AnimationInstancing
             {
                 return;
             }
+            this.curAnimationName = FindAnimNameByIndex(animationIndex);
 
             transitionDuration = 0.0f;
             transitionProgress = 1.0f;
@@ -575,6 +576,14 @@ namespace AnimationInstancing
                 return -1;
             searchInfo.animationNameHash = hash;
             return aniInfo.BinarySearch(searchInfo, comparer);
+        }
+        private string FindAnimNameByIndex(int index)
+        {
+            if (aniInfo == null)
+            {
+                return "";
+            }
+            return aniInfo[index].animationName;
         }
 
         public void Attach(string boneName, AnimationInstancing attachment)
