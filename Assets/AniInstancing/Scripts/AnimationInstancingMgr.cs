@@ -71,6 +71,7 @@ namespace AnimationInstancing
 
         // all object used animation instancing
         List<AnimationInstancing> aniInstancingList;
+        private int aniInstancingSupportCount = 10000;
         // to calculate lod level
         private Transform cameraTransform;
         private Dictionary<int, VertexCache> vertexCachePool;
@@ -103,10 +104,10 @@ namespace AnimationInstancing
 
         private void OnEnable()
         {
-            boundingSphere = new BoundingSphere[5000];
+            boundingSphere = new BoundingSphere[aniInstancingSupportCount * 5];
             InitializeCullingGroup();
             cameraTransform = Camera.main.transform;
-            aniInstancingList = new List<AnimationInstancing>(1000);
+            aniInstancingList = new List<AnimationInstancing>(aniInstancingSupportCount);
             if (SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.OpenGLES2)
             {
                 instancingPackageSize = 1;
@@ -351,6 +352,7 @@ namespace AnimationInstancing
                 if (aniTextureIndex == -1)
                 {
                     Debug.LogError("aniTextureIndex -1");
+                    continue;
                 }
                 for (int j = 0; j != lod.vertexCacheList.Length; ++j)
                 {

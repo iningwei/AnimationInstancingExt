@@ -1,4 +1,4 @@
-﻿
+
 /*
 THIS FILE IS PART OF Animation Instancing PROJECT
 AnimationInstancing.cs - The core part of the Animation Instancing library
@@ -149,7 +149,7 @@ namespace AnimationInstancing
 #endif
 
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
-            Debug.Log("This is the data path:" + path);
+            //Debug.Log("This is the data path:" + path);
             FileStream file = File.Open(path + animDataFileName + ".bytes", FileMode.Open);
             Debug.Assert(file.CanRead);
             InstanceAnimationInfo info = new InstanceAnimationInfo();
