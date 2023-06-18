@@ -24,4 +24,6 @@ How to setup the object which hold the attachment?
 
 
 # Other:
-Now support urp.Add USE_URP symbol with work(you should regenerate anim texture first).(ref:https://github.com/Unity-Technologies/Animation-Instancing/issues/104)
+Now support urp.
+
+Just add ``USE_URP`` symbol will work(you should regenerate anim texture first).(ref:https://github.com/Unity-Technologies/Animation-Instancing/issues/104)
