@@ -804,11 +804,19 @@ namespace AnimationInstancing
             if (generateMatrixDataPool.ContainsKey(stateName))
             {
                 ArrayList list = generateMatrixDataPool[stateName];
-                matrixData.boneMatrix = UtilityHelper.CalculateSkinMatrix(
-                        vertexCache.bonePose,
-                        vertexCache.bindPose,
-                        rootMatrix1stFrame,
-                        rootMotion);
+#if USE_URP
+                matrixData.boneMatrix = UtilityHelper.CalculateSkinMatrixRST(
+                         vertexCache.bonePose,
+                         vertexCache.bindPose,
+                         rootMatrix1stFrame,
+                         rootMotion);
+#else
+                matrixData.boneMatrix =   UtilityHelper.CalculateSkinMatrix(
+         vertexCache.bonePose,
+         vertexCache.bindPose,
+         rootMatrix1stFrame,
+         rootMotion);
+#endif 
 
                 GenerateOjbectInfo data = new GenerateOjbectInfo();
                 UtilityHelper.CopyMatrixData(data, matrixData);
@@ -817,11 +825,20 @@ namespace AnimationInstancing
             else
             {
                 UnityEngine.Profiling.Profiler.BeginSample("AddBoneMatrix:ContainsKey");
-                matrixData.boneMatrix = UtilityHelper.CalculateSkinMatrix(
-                    vertexCache.bonePose,
-                    vertexCache.bindPose,
-                    rootMatrix1stFrame,
-                    rootMotion);
+#if USE_URP
+                matrixData.boneMatrix = UtilityHelper.CalculateSkinMatrixRST(
+                            vertexCache.bonePose,
+                            vertexCache.bindPose,
+                            rootMatrix1stFrame,
+                            rootMotion);
+#else
+                matrixData.boneMatrix =  UtilityHelper.CalculateSkinMatrix(
+            vertexCache.bonePose,
+            vertexCache.bindPose,
+            rootMatrix1stFrame,
+            rootMotion);
+#endif
+
 
                 ArrayList list = new ArrayList();
                 GenerateOjbectInfo data = new GenerateOjbectInfo();

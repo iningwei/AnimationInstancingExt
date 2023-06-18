@@ -599,20 +599,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2967148682980494138, guid: 37d071c50670205489eb1d7ee9567ea4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3486616225593248682, guid: 37d071c50670205489eb1d7ee9567ea4,
         type: 3}
       propertyPath: m_Name
       value: daobing
-      objectReference: {fileID: 0}
-    - target: {fileID: 3486616225593248682, guid: 37d071c50670205489eb1d7ee9567ea4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4262976280953688336, guid: 37d071c50670205489eb1d7ee9567ea4,
         type: 3}

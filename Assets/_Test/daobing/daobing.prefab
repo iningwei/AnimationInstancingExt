@@ -327,6 +327,8 @@ MonoBehaviour:
   applyRootMotion: 0
   bonePerVertex: 4
   animDataFileName: daobing
+  initAnimationName: idle
+  curAnimationName: 
   aniInfo: []
 --- !u!1 &3582863548618463136
 GameObject:

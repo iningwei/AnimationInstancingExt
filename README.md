@@ -21,3 +21,7 @@ How to setup the object which hold the attachment?
 * Selece the fbx which refrenced by the prefab
 * Enable the skeleton's name to generate
 * Press the Generate button.
+
+
+# Other:
+Now support urp.Add USE_URP symbol with work(you should regenerate anim texture first).(ref:https://github.com/Unity-Technologies/Animation-Instancing/issues/104)

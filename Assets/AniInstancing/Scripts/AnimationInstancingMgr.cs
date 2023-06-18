@@ -71,7 +71,7 @@ namespace AnimationInstancing
 
         // all object used animation instancing
         List<AnimationInstancing> aniInstancingList;
-        private int aniInstancingSupportCount = 10000;
+        private int aniInstancingSupportCount = 30000;
         // to calculate lod level
         private Transform cameraTransform;
         private Dictionary<int, VertexCache> vertexCachePool;
@@ -567,13 +567,16 @@ namespace AnimationInstancing
             for (int i = 0; i != mesh.subMeshCount; ++i)
             {
                 package.material[i] = new Material(originalMaterial[i]);
-#if UNITY_5_6_OR_NEWER
+#if UNITY_5_6_OR_NEWER 
                 package.material[i].enableInstancing = UseInstancing;
 #endif
-                if (UseInstancing)
-                    package.material[i].EnableKeyword("INSTANCING_ON");
-                else
-                    package.material[i].DisableKeyword("INSTANCING_ON");
+
+                //TODO：unity2022.3.2 urp下会报错：Enabling local keyword 'INSTANCING_ON' for Material 'b_fenen_d' has been skipped. This keyword cannot be enabled directly.
+                //故这里先给注释
+                //////if (UseInstancing)
+                //////    package.material[i].EnableKeyword("INSTANCING_ON");
+                //////else
+                //////    package.material[i].DisableKeyword("INSTANCING_ON");
 
                 package.propertyBlock = new MaterialPropertyBlock();
                 package.material[i].EnableKeyword("USE_CONSTANT_BUFFER");
@@ -912,7 +915,13 @@ namespace AnimationInstancing
             {
                 uv2.Add(vertexCache.boneIndex[i]);
             }
+#if USE_URP
+vertexCache.mesh.SetUVs(1, uv2);
+#else
             vertexCache.mesh.SetUVs(2, uv2);
+#endif
+
+
             vertexCache.mesh.UploadMeshData(false);
         }
 
